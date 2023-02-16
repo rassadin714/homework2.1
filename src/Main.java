@@ -37,6 +37,13 @@ public class Main {
         printInfo(trucks[1]);
         printInfo(cars[0]);
         printInfo(buses[3]);
+        cars[1].passDiagnostics();
+        /*try {
+            buses[0].passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }*/
+        trucks[3].passDiagnostics();
 
     }
     public static void printAll(Transport[] transport){
