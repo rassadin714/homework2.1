@@ -41,6 +41,8 @@ public abstract class Transport<T extends Driver> implements Competing {
         return "Марка "+ brand + ", модель " + model + ", мощность двигателя " + engineVolume + " л" ;
     }
 
-        public abstract void startMoving();
-        public abstract void finishMoving();
+    public abstract void startMoving();
+    public abstract void finishMoving();
+    public abstract Type getType();
+    public abstract void printType();
 }
