@@ -53,6 +53,10 @@ public class Bus extends Transport<DriverD>{
             System.out.println("Автобус " + getBrand() + " " + getModel() + " " +passengerCapacity);
         }
     }
+    @Override
+    public void passDiagnostics() throws TransportTypeException{
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
+    }
 
     @Override
     public String toString() {
