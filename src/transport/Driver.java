@@ -33,5 +33,9 @@ public abstract class Driver {
     public abstract void startMoving();
     public abstract void stop();
     public abstract void refuel();
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 
