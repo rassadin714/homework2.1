@@ -1,6 +1,8 @@
 import transport.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 public class Main {
     public static void main(String[] args) {
         List<Transport> transportList = new ArrayList<>();
@@ -78,6 +80,16 @@ public class Main {
 
         findAndPrintNameOfDriver(cars[3]);
         findAndPrintMechanicsOfTransport(buses[0]);
+
+        Queue<Transport> transportQueue = new LinkedList<>();
+        ServiceStation serviceStation = new ServiceStation(transportQueue);
+        serviceStation.addTransportListToQueue(transportList);
+
+        for (Transport element: transportQueue){
+            System.out.println(element);
+        }
+        System.out.println();
+        serviceStation.conductTechnicalInspection();
 
     }
     public static void printAll(Transport[] transport){
