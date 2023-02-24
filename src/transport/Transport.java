@@ -44,13 +44,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     public void setMechanics(List<Mechanic> mechanics) {
         this.mechanics = mechanics;
     }
-    public Transport checkTypeOfTransport(){
-        if ( getType() != Type.BUS){
-            return this;
-        } else {
-            return null;
-        }
-    }
+    public abstract boolean isTypeOfTransportNeedsInspection();
 
     @Override
     public String toString() {

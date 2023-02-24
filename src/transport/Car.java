@@ -57,6 +57,10 @@ public class Car extends Transport<DriverB> {
         System.out.println("Автомобиль " + getBrand() + " максимальная скорость");
     }
     @Override
+    public boolean isTypeOfTransportNeedsInspection() {
+        return true;
+    }
+    @Override
     public String toString() {
         return "Автомобиль " + super.toString() + ", " + carBody;
     }

@@ -14,7 +14,7 @@ public class ServiceStation {
     }
 
     public void addTransportQueue (Transport<?> transport){
-        if (transport.checkTypeOfTransport() != null) {
+        if (transport.isTypeOfTransportNeedsInspection()) {
             transportQueue.offer(transport);
         }
     }

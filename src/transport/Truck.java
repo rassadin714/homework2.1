@@ -57,6 +57,10 @@ public class Truck extends Transport<DriverC>{
         System.out.println("Грузовик" + getBrand() + " " + getModel() + " прошел диагностику");
     }
     @Override
+    public boolean isTypeOfTransportNeedsInspection() {
+        return true;
+    }
+    @Override
     public String toString() {
         return "Грузовой автомобиль " + super.toString() + ", " + loadCapacity;
     }
