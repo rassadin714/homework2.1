@@ -43,7 +43,15 @@ public class Main {
         trucks[0] = new Truck("Камаз", "3553", 5, new DriverC("Петр", true, 8), LoadCapacity.N1, mechanicsList2);
         trucks[1] = new Truck("Маз", "555", 2.1, new DriverC("Павел", true, 9), LoadCapacity.N2, mechanicsList5);
         trucks[2] = new Truck("Mercedes", "222", 5, new DriverC("Игорь", true, 14), LoadCapacity.N1, mechanicsList4);
-        trucks[3] = new Truck("УАЗ", "111", 3, new DriverC("Илья", true, 15), LoadCapacity.N3, mechanicsList1);;
+        trucks[3] = new Truck("УАЗ", "111", 3, new DriverC("Илья", true, 15), LoadCapacity.N3, mechanicsList1);
+
+        Map<Car, Mechanic> map = new HashMap<>();
+        map.put(new Car("Audi","A8 50 L TDI quattro",3.0, new DriverB("Олег", true, 11), CarBody.HATCHBACK, mechanicsList2), mechanic1);
+        map.put(new Car("KIA", "Sportage 4-го поколения", 2.4, new DriverB("Михаил", true, 9), CarBody.CROSSOVER, mechanicsList3), mechanic2);
+        map.put(new Car("BMW", "Z8", 3.0, new DriverB("Степан", true, 12), CarBody.SEDAN, mechanicsList1), mechanic1);
+        for (Map.Entry<Car, Mechanic> contact: map.entrySet()) {
+            System.out.println(contact.getKey() + ": " + contact.getValue());
+        }
 
 
         System.out.println(cars[0].getType());
