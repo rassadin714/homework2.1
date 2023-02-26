@@ -1,8 +1,7 @@
 import transport.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Queue;
+
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         List<Transport> transportList = new ArrayList<>();
@@ -90,6 +89,24 @@ public class Main {
         }
         System.out.println();
         serviceStation.conductTechnicalInspection();
+
+        System.out.println();
+
+        Set<Driver> driverSet = new HashSet<>();
+        Driver[] drivers = new Driver[9];
+        drivers[0] = new DriverB("Михаил", true, 11);
+        drivers[1]= new DriverB("Антон", true, 15);
+        drivers[2] = new DriverB("Михаил", true, 11);
+        drivers[3]= new DriverC("Андрей", true, 20);
+        drivers[4]= new DriverC("Максим", true, 8);
+        drivers[5] = new DriverC("Максим", true, 8);
+        drivers[6]= new DriverD("Нурлан", true, 13);
+        drivers[7] = new DriverD("Денис", true, 14);
+        drivers[8]= new DriverD("Нурлан", true, 13);
+        for (Driver driver: drivers){
+            driverSet.add(driver);
+        }
+        System.out.println(driverSet);
 
     }
     public static void printAll(Transport[] transport){
