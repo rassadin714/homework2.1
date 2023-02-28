@@ -1,10 +1,12 @@
 package transport;
 
+import java.util.List;
+
 public class Truck extends Transport<DriverC>{
     private LoadCapacity loadCapacity;
     private final Type truck = Type.TRUCK;
-    public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume, driver);
+    public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics);
         this.loadCapacity = loadCapacity;
     }
     public LoadCapacity getLoadCapacity() {
@@ -53,6 +55,10 @@ public class Truck extends Transport<DriverC>{
     @Override
     public void passDiagnostics(){
         System.out.println("Грузовик" + getBrand() + " " + getModel() + " прошел диагностику");
+    }
+    @Override
+    public boolean isTypeOfTransportNeedsInspection() {
+        return true;
     }
     @Override
     public String toString() {

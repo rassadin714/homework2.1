@@ -1,10 +1,12 @@
 package transport;
+import java.util.List;
 
 public class Car extends Transport<DriverB> {
     private CarBody carBody;
     private final Type car = Type.CAR;
-    public Car(String brand, String model, double engineVolume, DriverB driver, CarBody carBody) {
-        super(brand, model, engineVolume, driver);
+
+    public Car(String brand, String model, double engineVolume, DriverB driver, CarBody carBody, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics);
         this.carBody = carBody;
     }
 
@@ -53,6 +55,10 @@ public class Car extends Transport<DriverB> {
     @Override
     public void maxSpeed() {
         System.out.println("Автомобиль " + getBrand() + " максимальная скорость");
+    }
+    @Override
+    public boolean isTypeOfTransportNeedsInspection() {
+        return true;
     }
     @Override
     public String toString() {
